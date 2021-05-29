@@ -1,6 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app_cr/book_list_model.dart';
+import 'package:flutter_app_cr/bookl_list/book_list_model.dart';
 import 'package:provider/provider.dart';
 
 class BookListPage extends StatelessWidget {
@@ -25,18 +25,12 @@ class BookListPage extends StatelessWidget {
             );
           },
         ),
-        // body: StreamBuilder<QuerySnapshot>(
-        //   stream: Firestore.instance.collection('books').snapshots(),
-        //   builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-        //     return ListView(
-        //       children: snapshot.data.documents.map((DocumentSnapshot document) {
-        //         return ListTile(
-        //           title: Text(document['title']),
-        //         );
-        //       }).toList(),
-        //     );
-        //   },
-        // ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          onPressed: () {
+            // TODO
+          },
+        ),
       ),
     );
   }
