@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_cr/bookl_list/book_list_page.dart';
 import 'package:flutter_app_cr/main_model.dart';
+import 'package:flutter_app_cr/presentation/login/login_page.dart';
+import 'package:flutter_app_cr/presentation/signup/signup_page.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -28,16 +30,36 @@ class MyApp extends StatelessWidget {
                     style: TextStyle(fontSize: 30),
                   ),
                   RaisedButton(
-                    child: Text('ボタン'),
+                      child: Text('本の一覧'),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => BookListPage()),
+                        );
+                      }),
+                  RaisedButton(
+                    child: Text('新規登録'),
                     onPressed: () {
                       // TODO
                       // model.changeTboyText();
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => BookListPage()),
+                        MaterialPageRoute(builder: (context) => SignupPage()),
                       );
                     },
-                  )
+                  ),
+                  RaisedButton(
+                    child: Text('ログイン'),
+                    onPressed: () {
+                      // TODO
+                      // model.changeTboyText();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginPage()),
+                      );
+                    },
+                  ),
                 ],
               ),
             );
